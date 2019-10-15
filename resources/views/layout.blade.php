@@ -2,16 +2,13 @@
 <html>
 <head>
 
-    <title>@yield('title', 'My Site')</title>
+    <title></title>
 </head>
 
 <body>
-    @yield('content')
-    <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/about">About Us</a></li>
-        <li><a href="/contact">Contact</a></li>
-    </ul>
+    <div class="container">
+        @yield('content')
+    </div>
 
 </body>
 </html>
