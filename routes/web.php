@@ -27,6 +27,8 @@ Route::resource('projects', 'ProjectsController');
 //Route::delete('/projects/{project}', 'ProjectsController@destroy');
 
 
+Route::patch('/tasks/{task}', 'ProjectTasksController@update');
+
 Route::get('/about', function () {
     return view('about');
 });
