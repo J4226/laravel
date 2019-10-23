@@ -36,8 +36,8 @@
     </form>
     
     <form method="POST" action="/projects/{{ $project->id }}">
-        @method('DELETE')
-        @csrf
+        {{ method_field('DELETE') }}
+        {{ csrf_field() }}
     <div class="field">
             <div class="control">
                 <button type="submit" class="button">DELETE Project</button>
