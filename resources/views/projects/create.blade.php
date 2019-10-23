@@ -13,7 +13,7 @@
             <label class="label" for="title">Project Title</label>
             
             <div class="control">
-                <input type="text" class="input {{ $errors->has('title') ? 'is-danger' : '' }}" name="title" value="{{ old('title') }}">
+                <input type="text" class="input {{ $errors->has('title') ? 'is-danger' : '' }}" name="title" value="{{ old('title') }}" required>
             </div>
         </div>
         
@@ -31,15 +31,7 @@
                 <button type="submit" class="button">Create Project</button>
             </div>
         </div>
-        @if ($errors->any())
-        <div class="notification is-danger">
-            <ul>
-                @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
-        @endif
+        @include('errors')
         
         
     </form>
