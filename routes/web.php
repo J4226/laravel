@@ -42,7 +42,7 @@ Route::resource('projects', 'ProjectsController');
 Route::patch('/tasks/{task}', 'ProjectTasksController@update');
 Route::post('/projects/{project}/tasks', 'ProjectTasksController@store');
 
-
+/*
 Route::get('/', function (UserRepository $users) {
    // dd(app('App\Example'));
    //dd(app('foo'));
@@ -50,8 +50,12 @@ Route::get('/', function (UserRepository $users) {
    dd($users);
     return view('welcome');
 });
+*/
 
-
+Route::get('/', function (Twitter $twitter) {
+   dd($twitter);
+    return view('welcome');
+});
 Route::get('/about', function () {
     return view('about');
 });
