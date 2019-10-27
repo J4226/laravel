@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Filesystem\Filesystem;
+use App\Services\Twitter;
 use App\Project;
 
 class ProjectsController extends Controller
@@ -15,10 +17,15 @@ class ProjectsController extends Controller
         
     }
     
-    
-    public function show(Project $project)
+   /* public function show(Filesystem $file)
     {
-
+        dd($file);
+    } */
+    public function show(Project $project, Twitter $twitter)
+    {
+    // $twitter = app('twitter');
+     dd($twitter);
+     //   $filesystem = app('Illuminate\Filesystem\Filesystem');
         return view('projects.show', compact('project'));
     }
     

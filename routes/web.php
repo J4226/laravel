@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Filesystem\Filesystem;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -10,6 +11,15 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+/*
+app()->singleton('example', function () {
+    return new \App\Example;
+});
+*/
+
+app()->singleton('App\Services\Twitter', function () {
+    return new \App\Services\Twitter(config('services.twitter.api_key'));
+});
 
 Route::get('/', 'PagesController@home');
 Route::get('/about', 'PagesController@about');
@@ -29,6 +39,13 @@ Route::resource('projects', 'ProjectsController');
 
 Route::patch('/tasks/{task}', 'ProjectTasksController@update');
 Route::post('/projects/{project}/tasks', 'ProjectTasksController@store');
+
+
+Route::get('/', function () {
+    dd(app('App\Example'));
+    return view('welcome');
+});
+
 
 Route::get('/about', function () {
     return view('about');
