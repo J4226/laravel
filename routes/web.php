@@ -63,3 +63,6 @@ Route::get('/about', function () {
 Route::get('/contact', function () { //example.com/contact
     return view('contact');
 });
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

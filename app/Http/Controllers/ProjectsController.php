@@ -9,9 +9,14 @@ use App\Project;
 
 class ProjectsController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+       // $this->middleware('auth')->except(['show']);
+    }
     public function index()
     {
-        $projects = Project::all();
+        $projects = Project::where('owner_id', auth()->id())->get();
         
         return view('projects.index', compact('projects')); 
         
@@ -44,6 +49,7 @@ class ProjectsController extends Controller
             
         ]);
         
+        $attributes['owner_id'] = auth()->id();
         Project::create($attributes);
        
         
