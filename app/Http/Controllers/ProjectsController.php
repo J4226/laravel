@@ -12,6 +12,8 @@ class ProjectsController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
+    $this->middleware('can:update,project')
+        ->except(['index', 'store', 'create']);
        // $this->middleware('auth')->except(['show']);
     }
     public function index()
@@ -28,15 +30,30 @@ class ProjectsController extends Controller
     } */
     public function show(Project $project, Twitter $twitter)
     {
+        
+      //  $this->authorize('view', $project);
+     //$this->authorize('update', $project);   
     // $twitter = app('twitter');
-     dd($twitter);
-     //   $filesystem = app('Illuminate\Filesystem\Filesystem');
+    // dd($twitter);
+    //abort_unless(auth()->user()->owns($project), 403);
+  /*
+  if($project->owner_id !== auth()->id()) {
+        dd('Wrong user, not allowed');
+    }
+        $filesystem = app('Illuminate\Filesystem\Filesystem');
+    */    
+    /*   if (\Gate::denies('update', $project)) {
+           dd('Wrong user, access denied');
+       }*/
+        
+       // abort_unless(\Gate::allows('update', $project), 403);
+       
         return view('projects.show', compact('project'));
     }
     
      public function create()
     {
-        
+        $projects = Project::where('owner_id', auth()->id())->get();
         return view('projects.create'); 
         
     }
@@ -66,7 +83,8 @@ class ProjectsController extends Controller
     
     public function update(Project $project)
     {
-        
+    
+    // $this->authorize('update', $project);   
    // $project = Project::find($id);
     $project->update(request(['title', 'description']));
     return redirect('/projects');
@@ -74,6 +92,7 @@ class ProjectsController extends Controller
     
     public function destroy(Project $project)
     {
+     //   $this->authorize('destroy', $project); 
         $project->delete();
         return redirect('/projects');
     }
