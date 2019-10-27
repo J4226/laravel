@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Filesystem\Filesystem;
+use App\Services\Twitter;
+use App\Repositories\UserRepository;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,11 +18,11 @@ app()->singleton('example', function () {
     return new \App\Example;
 });
 */
-
+/*
 app()->singleton('App\Services\Twitter', function () {
     return new \App\Services\Twitter(config('services.twitter.api_key'));
 });
-
+*/
 Route::get('/', 'PagesController@home');
 Route::get('/about', 'PagesController@about');
 Route::get('/contact', 'PagesController@contact');
@@ -41,8 +43,11 @@ Route::patch('/tasks/{task}', 'ProjectTasksController@update');
 Route::post('/projects/{project}/tasks', 'ProjectTasksController@store');
 
 
-Route::get('/', function () {
-    dd(app('App\Example'));
+Route::get('/', function (UserRepository $users) {
+   // dd(app('App\Example'));
+   //dd(app('foo'));
+  // dd($twitter);
+   dd($users);
     return view('welcome');
 });
 
