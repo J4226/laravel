@@ -57,7 +57,8 @@ class ProjectsController extends Controller
         return view('projects.create'); 
         
     }
-    
+//Example of data cleansing and validation
+//////////////////////////////////////////////////////////////    
     public function store()
     {
        $attributes = request()->validate([
@@ -73,6 +74,7 @@ class ProjectsController extends Controller
         
         return redirect('/projects');
     }
+//////////////////////////////////////////////////////////////  
     
     public function edit(Project $project) //example.com/projects/1/edit
     {

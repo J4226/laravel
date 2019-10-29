@@ -58,6 +58,15 @@
                 text-decoration: none;
                 text-transform: uppercase;
             }
+            
+            .checkpoints {
+                color: #636b6f;
+                font-size: 12px;
+                font-weight: 600;
+                letter-spacing: .1rem;
+                text-decoration: none;
+                text-transform: uppercase;
+            }
 
             .m-b-md {
                 margin-bottom: 30px;
@@ -88,6 +97,30 @@
                     <a href="https://laravel-news.com">News</a>
                     <a href="https://forge.laravel.com">Forge</a>
                     <a href="https://github.com/laravel/laravel">GitHub</a>
+                    <a href="/projects">Projects</a>
+                </div>
+                <div class="checkpoints">
+                <h1>CheckPoint 1 List</h1>
+                    <ul>
+                        <li><a href="/welcome">Routing (Routes/web.php :: Line 27 or Routes/Console.php :: php artisan foobar)</a></li>
+                        <br>
+                        <li><a href="/projects">Layout files with Blades (resources/views/layout.blade.php)</a></li>
+                        <br>
+                        <li><a href="/welcome">Sending Data To Views (Http/Controllers/PagesController.php :: Line 13)</a></li>
+                        <br>
+                        <li><a href="/welcome">Controllers (Http/Controllers/PagesController.php :: Line 13)</a></li>
+                        <br>
+                        <li><a href="/projects/create">Database integration through migration and Eloquent ORM (database/migrations/create{users/projects/tasks})</a></li>
+                        <br>
+                        <li><a href="/projects/create">Forms With CSRF proctection and Data modification (resources/views/projects/create.blade.php)</a></li>
+                        <br>
+                        <li><a href="/projects/create">Data Cleansing and validation (Http/Controllers/ProjectsController.php :: Line 60)</a></li>
+                        <br>
+                        <li><a href="/register">Registration and Authentication ((Http/Controllers/ProjectsController.php :: Line 21)</a></li>
+                        <br>
+                        <li><a href="/projects/3">Authorisation and Laravel Gate (GATE Providers/AuthServiceProvider.php :: Line 25  Authorisation Http/Controllers/ProjectsController.php :: Line 15/16  and Line 56)</li>
+                        
+                    </ul>
                 </div>
             </div>
         </div>

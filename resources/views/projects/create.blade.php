@@ -22,7 +22,7 @@
             <label class="label" for="description">Project Description</label>
             
             <div class="control">
-                <textarea name="description" class="textarea {{ $errors->has('title') ? 'is-danger' : '' }}">{{ old('description') }}</textarea>
+                <textarea name="description" class="textarea {{ $errors->has('title') ? 'is-danger' : '' }}">{{ old('description') }} </textarea>
             </div>
         </div>
         

@@ -23,10 +23,12 @@ app()->singleton('App\Services\Twitter', function () {
     return new \App\Services\Twitter(config('services.twitter.api_key'));
 });
 */
-Route::get('/', 'PagesController@home');
+
+//Example Of Routing
+Route::get('/welcome', 'PagesController@home');
 Route::get('/about', 'PagesController@about');
 Route::get('/contact', 'PagesController@contact');
-
+/////////////////////////////////////////////
 
 Route::resource('projects', 'ProjectsController');
 //Route::resource('projects', 'ProjectsController')->middleware('can:update,project');
@@ -52,9 +54,20 @@ Route::get('/', function (UserRepository $users) {
 });
 */
 
-Route::get('/', function (Twitter $twitter) {
-   dd($twitter);
+
+////////////////////////////////////////////////////////////////////////////
+/*
+Route::get('/welcome', function (UserRepository $users, Twitter $twitter) {
+   //dd(app('App\Example'));
+   //dd($twitter);
+   //dd($users);
     return view('welcome');
+});
+*/
+/////////////////////////////////////////////////////////////////////////////
+Route::get('/', function (Twitter $twitter) {
+   //dd($twitter);
+    return view('welcome1');
 });
 Route::get('/about', function () {
     return view('about');
