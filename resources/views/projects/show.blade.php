@@ -3,7 +3,12 @@
 
 
 @section('content')
+<style>
+            span {
+                color: #636b6f;
 
+            }
+</style>
     <h1 class="title">{{ $project->title }}</h1>
 
    
@@ -39,7 +44,7 @@
     <form method="POST" action="/projects/{{ $project->id }}/tasks" class="box">
     {{ csrf_field() }}
         <div class="field">
-            <label class="label" for="description">New Task</label>
+            <label class="label" for="description"><span>New Task</span></label>
             
             <div class="control">
                 <input type="text" class="input" name="description" placeholder="New Task" required>

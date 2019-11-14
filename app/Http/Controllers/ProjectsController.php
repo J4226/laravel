@@ -4,9 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Filesystem\Filesystem;
+use Illuminate\Support\Facades\Mail;
 use App\Services\Twitter;
 use App\Project;
-
+use App\Mail\ProjectCreated;
 class ProjectsController extends Controller
 {
     public function __construct()
@@ -68,9 +69,11 @@ class ProjectsController extends Controller
         ]);
         
         $attributes['owner_id'] = auth()->id();
-        Project::create($attributes);
+        $project = Project::create($attributes);
        
-        
+       Mail::to($project->owner->email)->send(
+            new ProjectCreated($project)
+       );
         
         return redirect('/projects');
     }
