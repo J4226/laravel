@@ -26,4 +26,14 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+    
+    public function isVerified()
+    {
+        return (bool) $this->email_verified_at;
+    }
+    
+    public function isNotVerified()
+    {
+        return ! $this->isVerified();
+    }
 }

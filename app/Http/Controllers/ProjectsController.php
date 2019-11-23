@@ -96,8 +96,9 @@ class ProjectsController extends Controller
     
     public function update(Project $project)
     {
+       // $id = Project::where('owner_id', auth()->id())->get();
+        //$user = \App\User::find($id);
         $user = \App\User::first();
-        //$user = \App\User::first();
         //$user = \User::where('email', $event->data['email'])->first();
         $user->notify(new ProjectUpdated);
     // $this->authorize('update', $project);   
