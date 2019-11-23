@@ -9,6 +9,9 @@ use App\Services\Twitter;
 use App\Project;
 use App\Mail\ProjectCreated as ProjectCreatedMail;
 use App\Events\ProjectCreated;
+use App\Notifications\ProjectUpdated;
+use App\Repositories\UserRepository;
+use App\User;
 
 class ProjectsController extends Controller
 {
@@ -93,7 +96,10 @@ class ProjectsController extends Controller
     
     public function update(Project $project)
     {
-    
+        $user = \App\User::first();
+        //$user = \App\User::first();
+        //$user = \User::where('email', $event->data['email'])->first();
+        $user->notify(new ProjectUpdated);
     // $this->authorize('update', $project);   
    // $project = Project::find($id);
     $project->update(request(['title', 'description']));

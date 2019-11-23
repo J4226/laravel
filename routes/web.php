@@ -3,6 +3,7 @@
 use Illuminate\Filesystem\Filesystem;
 use App\Services\Twitter;
 use App\Repositories\UserRepository;
+use App\Notifications\ProjectUpdated;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -44,6 +45,17 @@ Route::resource('projects', 'ProjectsController');
 Route::patch('/tasks/{task}', 'ProjectTasksController@update');
 Route::post('/projects/{project}/tasks', 'ProjectTasksController@store');
 
+/*
+Route::get('/welcome', function() {
+
+    $user = App\User::first();
+    
+    $user->notify(new ProjectUpdated);
+    
+    return 'Done';
+
+});
+ */  
 /*
 Route::get('/', function (UserRepository $users) {
    // dd(app('App\Example'));
