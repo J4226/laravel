@@ -7,7 +7,9 @@ use Illuminate\Filesystem\Filesystem;
 use Illuminate\Support\Facades\Mail;
 use App\Services\Twitter;
 use App\Project;
-use App\Mail\ProjectCreated;
+use App\Mail\ProjectCreated as ProjectCreatedMail;
+use App\Events\ProjectCreated;
+
 class ProjectsController extends Controller
 {
     public function __construct()
@@ -71,6 +73,7 @@ class ProjectsController extends Controller
         $attributes['owner_id'] = auth()->id();
         $project = Project::create($attributes);
 
+     //   event(new ProjectCreated($project));
        
        /*
        Mail::to($project->owner->email)->send(
