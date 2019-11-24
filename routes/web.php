@@ -51,6 +51,19 @@ Route::post('/projects/{project}/tasks', 'ProjectTasksController@store');
 
 //Route::get('/projects', 'ProjectsController@index');
 
+Route::get('/welcome', function() {
+    $user = App\User::first();
+    
+    $post = $user->posts()->create([
+        'title' => 'foobar',
+        'body' => 'lorem ipsum'
+    ]);
+    
+    $post->tags()->attach(1);
+    return view('welcome');
+});
+
+
 
 
 Route::get('projects/create', function() {
