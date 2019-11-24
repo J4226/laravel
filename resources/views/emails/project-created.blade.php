@@ -1,11 +1,11 @@
 @component('mail::message')
 # New Project: {{ $project->title }}
 
-//The body of your message.
+This is the project description: 
 {{ $project->description }}
 
 @component('mail::button', ['url' => '/projects' . $project->id])
-View Project
+View Project Here!
 @endcomponent
 
 Thanks,<br>

@@ -7,6 +7,9 @@
 
 <body>
     <h1>Projects</h1>
+    @if (session('message'))
+        <p>{{ session('message') }}</P>
+    @endif
     <ul>
     @foreach ($projects as $project)
     

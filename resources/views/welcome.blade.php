@@ -3,7 +3,7 @@
 
 @section('content')
 
-<h1>My First Site {{$foo}}</h1>
+<h1>My First Site </h1>
 
 
 @endsection

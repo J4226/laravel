@@ -102,11 +102,11 @@
                 <div class="checkpoints">
                 <h1>CheckPoint 2 List</h1>
                     <ul>
-                        <li><a href="/welcome">Mailables</a></li>
+                        <li><a href="/projects/create">Mailables (Create Project Email)</a></li>
                         <br>
-                        <li><a href="/projects">Events and Notifications</a></li>
+                        <li><a href="/projects">Events and Notifications (Update Project Notification)</a></li>
                         <br>
-                        <li><a href="/welcome">Collections</a></li>
+                        <li><a href="/welcome">Collections (Done through artisan tinker)</a></li>
                         <br>
                         <li><a href="/welcome">Sessions</a></li>
                         <br>

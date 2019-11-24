@@ -4,6 +4,8 @@ use Illuminate\Filesystem\Filesystem;
 use App\Services\Twitter;
 use App\Repositories\UserRepository;
 use App\Notifications\ProjectUpdated;
+use Illuminate\Http\Request;
+use App\Project;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -24,6 +26,11 @@ app()->singleton('App\Services\Twitter', function () {
     return new \App\Services\Twitter(config('services.twitter.api_key'));
 });
 */
+function flash($message)
+{
+    session()->flash('message', $message);
+}
+
 
 //Example Of Routing
 Route::get('/welcome', 'PagesController@home');
@@ -45,6 +52,47 @@ Route::resource('projects', 'ProjectsController');
 Route::patch('/tasks/{task}', 'ProjectTasksController@update');
 Route::post('/projects/{project}/tasks', 'ProjectTasksController@store');
 
+
+//Route::get('/projects', 'ProjectsController@index');
+
+
+
+Route::get('projects/create', function() {
+   // $projects = Project::where('owner_id', auth()->id())->get();
+   return view('projects.create'); 
+    
+});
+
+Route::post('projects', function() {
+    
+    //validate
+    //save
+    $attributes = request()->validate([
+            'title' => ['required', 'min:3', 'max:255'],
+            'description' => ['required', 'min:3']
+            
+        ]);
+        
+        $attributes['owner_id'] = auth()->id();
+        $project = Project::create($attributes);
+
+     flash('Your project has been created.');
+    return redirect('/projects');
+});
+
+
+/*
+Route::get('/welcome', function(Request $request) {
+   //session(['name' => 'JohnDoe']);
+   //return session('name', 'default value placeholder');
+  
+   // $request->session()->put('foobar', 'baz');
+   // return $request->session()->get('foobar');
+    $request->flash();
+    return view('welcome');
+    
+});
+*/
 /*
 Route::get('/welcome', function() {
 
