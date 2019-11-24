@@ -6,7 +6,11 @@
 </head>
 
 <body>
+    <b><a href="/">Home</a></b>
+    <br><br>
+    <span><a href="/projects/create">Create New Project!</a></span>
     <h1>Projects</h1>
+    
     @if (session('message'))
         <p>{{ session('message') }}</P>
     @endif

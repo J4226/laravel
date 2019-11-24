@@ -8,6 +8,7 @@
 
             }
 </style>
+<span><a href="/projects">Back</a></span>
 <h1 class="title">Edit Project</h1>
     
     <form method="POST" action="/projects/{{ $project->id }}">

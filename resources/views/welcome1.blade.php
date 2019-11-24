@@ -96,21 +96,21 @@
                     <a href="https://laracasts.com">Laracasts</a>
                     <a href="https://laravel-news.com">News</a>
                     <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                    <a href="https://github.com/J4226/laravel">My GitHub Page</a>
                     <a href="/projects">Projects</a>
                 </div>
                 <div class="checkpoints">
                 <h1>CheckPoint 2 List</h1>
                     <ul>
-                        <li><a href="/projects/create">Mailables (Create Project Email)</a></li>
+                        <li><a href="/projects/create">Mailables (Create Project Email) https://mailtrap.io/</a></li>
                         <br>
                         <li><a href="/projects">Events and Notifications (Update Project Notification)</a></li>
                         <br>
                         <li><a href="/welcome">Collections (Done through artisan tinker)</a></li>
                         <br>
-                        <li><a href="/projects/create">Sessions/Flash (New Project Created)</a></li>
+                        <li><a href="/projects/create">Sessions/Flash Messsages(New Project Created)</a></li>
                         <br>
-                        <li><a href="/projects/create">Test Driven Development with PHPUnit</a></li>
+                        <li><a href="/projects/create">Test Driven Development with PHPUnit (vendor/bin/phpunit tests/Feature/ProjectTest.php)</a></li>
                         <br>
                         <li><a href="/projects/create">Eloquent relationships and techniques</a></li>
                         <br>
