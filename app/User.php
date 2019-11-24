@@ -36,4 +36,11 @@ class User extends Authenticatable
     {
         return ! $this->isVerified();
     }
+    
+    public function project()
+    {
+        return $this->hasMany('App\Project');
+    }
+    
+    
 }

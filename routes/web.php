@@ -59,7 +59,7 @@ Route::get('projects/create', function() {
     
 });
 
-Route::post('projects', function() {
+Route::middleware('auth')->post('/projects', function() {
     
     
     $attributes = request()->validate([
@@ -69,8 +69,10 @@ Route::post('projects', function() {
         ]);
         
         $attributes['owner_id'] = auth()->id();
+        
         $project = Project::create($attributes);
-
+    
+     //App\Project::create($attributes);
      flash('Your project has been created.');
     return redirect('/projects');
 });

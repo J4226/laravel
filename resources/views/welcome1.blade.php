@@ -108,7 +108,7 @@
                         <br>
                         <li><a href="/welcome">Collections (Done through artisan tinker)</a></li>
                         <br>
-                        <li><a href="/welcome">Sessions</a></li>
+                        <li><a href="/projects/create">Sessions/Flash (New Project Created)</a></li>
                         <br>
                         <li><a href="/projects/create">Test Driven Development with PHPUnit</a></li>
                         <br>
