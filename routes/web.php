@@ -26,10 +26,6 @@ app()->singleton('App\Services\Twitter', function () {
     return new \App\Services\Twitter(config('services.twitter.api_key'));
 });
 */
-function flash($message)
-{
-    session()->flash('message', $message);
-}
 
 
 //Example Of Routing
@@ -65,8 +61,7 @@ Route::get('projects/create', function() {
 
 Route::post('projects', function() {
     
-    //validate
-    //save
+    
     $attributes = request()->validate([
             'title' => ['required', 'min:3', 'max:255'],
             'description' => ['required', 'min:3']
