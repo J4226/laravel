@@ -19,9 +19,7 @@ class AppServiceProvider extends ServiceProvider
        \URL::forceScheme('https');
        Relation::morphMap([
             'series' => 'App\Series',
-            'collection' => 'App\Collection'
-        
-       
+            'collection' => 'App\Collection'      
        ]);
     }
 

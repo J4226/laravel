@@ -4,10 +4,14 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class coMMENT extends Model
+class Comment extends Model
 {
+    use Likeable;
+    
     public function POST()
     {
         return $this->belongsTo(Post::class);
     }
+    
+   
 }

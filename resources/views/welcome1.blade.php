@@ -112,7 +112,7 @@
                         <br>
                         <li><a href="/projects/create">Test Driven Development with PHPUnit (vendor/bin/phpunit tests/Feature/ProjectTest.php)</a></li>
                         <br>
-                        <li><a href="/projects/create">Eloquent relationships and techniques</a></li>
+                        <li><a href="/projects/create">Eloquent relationships and techniques (vendor/bin/phpunit tests/Feature/LikingTest.php)</a></li>
                         <br>
                         <li><a href="/projects/create">Advanced authentication techniques</a></li>
                         <br>
